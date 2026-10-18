@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Línea de tiempo | Alfa Producciones</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ===== Colores ===== */
+      :root {
+        --dorado: #c49529;
+        --negro: #1b1914;
+        --blanco: #fffbf5;
+        --borde: #4a4435;
+      }
+
+      /* ===== Base ===== */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background:
+          radial-gradient(
+            ellipse at 50% 0%,
+            rgba(196, 149, 41, 0.18),
+            transparent 50%
+          ),
+          var(--negro);
+        color: var(--blanco);
+        font-family: "Poppins", "Segoe UI", sans-serif;
+        line-height: 1.6;
+        padding: 70px 5% 90px;
+      }
+
+      /* ===== Encabezado ===== */
+      header {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 70px;
+      }
+      header small {
+        color: var(--dorado);
+        letter-spacing: 4px;
+        font-size: 0.75rem;
+      }
+      header h1 {
+        font-size: clamp(1.8rem, 5vw, 3rem);
+        text-transform: uppercase;
+        margin: 8px 0 12px;
+      }
+      header h1 span {
+        color: var(--dorado);
+      }
+      header p {
+        color: #b5ad9f;
+      }
+
+      /* ===== Línea de tiempo ===== */
+      .linea {
+        position: relative;
+        max-width: 1100px;
+        margin: auto;
+        padding-left: 64px;
+      }
+      .linea::before {
+        content: "";
+        position: absolute;
+        left: 21px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(var(--dorado), rgba(196, 149, 41, 0.1));
+      }
+      .item {
+        position: relative;
+        margin-bottom: 80px;
+      }
+      .num {
+        position: absolute;
+        left: -64px;
+        top: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--dorado);
+        color: #000;
+        font-weight: 700;
+        box-shadow:
+          0 0 0 6px var(--negro),
+          0 0 25px rgba(196, 149, 41, 0.6);
+      }
+      .item h2 {
+        font-size: 1.5rem;
+        padding-top: 6px;
+      }
+      .item p {
+        color: #d4cdbf;
+        max-width: 760px;
+        margin: 6px 0 10px;
+      }
+
+      /* ===== Archivo y botón ===== */
+      .acciones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+      .archivo {
+        color: var(--dorado);
+        border: 1px solid var(--borde);
+        border-radius: 20px;
+        padding: 3px 14px;
+        font-size: 0.78rem;
+      }
+      .abrir {
+        color: var(--blanco);
+        font-size: 0.8rem;
+        text-decoration: underline;
+      }
+      .abrir:hover {
+        color: var(--dorado);
+      }
+
+      /* ===== Marco con la vista previa ===== */
+      .marco {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 16px;
+        border: 1px solid var(--borde);
+        background: #000;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+      }
+      .marco iframe {
+        width: 1280px;
+        height: 800px;
+        border: 0;
+        transform-origin: 0 0;
+      }
+
+      /* ===== Celular ===== */
+      @media (max-width: 640px) {
+        .linea {
+          padding-left: 50px;
+        }
+        .linea::before {
+          left: 17px;
+        }
+        .num {
+          left: -50px;
+          width: 36px;
+          height: 36px;
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <small>PROCESO DE CREACIÓN</small>
+      <h1>
+        Línea de tiempo
+        <span>Alfa Producciones</span>
+      </h1>
+      <p>
+        Cada versión de la página, de la primera a la actual. Puedes mover y
+        tocar cada una dentro de su marco.
+      </p>
+    </header>
+
+    <main class="linea">
+      <article class="item">
+        <div class="num">01</div>
+        <h2>Primera versión</h2>
+        <p>
+          Página simple en negro y ámbar: portada, 4 tarjetas de servicios con
+          emojis, un detalle por servicio y contacto por WhatsApp.
+        </p>
+        <div class="acciones">
+          <span class="archivo">01-primera-version.html</span>
+          <a class="abrir" href="01-primera-version.html" target="_blank">
+            Abrir en pestaña nueva
+          </a>
+        </div>
+        <div class="marco">
+          <iframe
+            src="01-primera-version.html"
+            title="Primera versión"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="num">02</div>
+        <h2>Tarjetas como botones</h2>
+        <p>
+          Cada cuadrado pasa a ser un botón invisible que lleva al servicio.
+          Primeras imágenes puestas por link.
+        </p>
+        <div class="acciones">
+          <span class="archivo">02-tarjetas-como-botones.html</span>
+          <a class="abrir" href="02-tarjetas-como-botones.html" target="_blank">
+            Abrir en pestaña nueva
+          </a>
+        </div>
+        <div class="marco">
+          <iframe
+            src="02-tarjetas-como-botones.html"
+            title="Tarjetas como botones"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="num">03</div>
+        <h2>Fotos incrustadas</h2>
+        <p>
+          Tus 4 fotos van dentro del código. Las tarjetas son las imágenes, con
+          letras de color.
+        </p>
+        <div class="acciones">
+          <span class="archivo">03-fotos-incrustadas.html</span>
+          <a class="abrir" href="03-fotos-incrustadas.html" target="_blank">
+            Abrir en pestaña nueva
+          </a>
+        </div>
+        <div class="marco">
+          <iframe
+            src="03-fotos-incrustadas.html"
+            title="Fotos incrustadas"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="num">04</div>
+        <h2>Diseño profesional</h2>
+        <p>
+          Menú con efecto vidrio, portada con haces de luz, cinta animada,
+          secciones alternadas, formulario a WhatsApp y botón flotante.
+        </p>
+        <div class="acciones">
+          <span class="archivo">04-diseno-profesional.html</span>
+          <a class="abrir" href="04-diseno-profesional.html" target="_blank">
+            Abrir en pestaña nueva
+          </a>
+        </div>
+        <div class="marco">
+          <iframe
+            src="04-diseno-profesional.html"
+            title="Diseño profesional"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="num">05</div>
+        <h2>Sin emojis</h2>
+        <p>
+          Los emojis se cambian por íconos vectoriales (flechas y WhatsApp).
+        </p>
+        <div class="acciones">
+          <span class="archivo">05-sin-emojis.html</span>
+          <a class="abrir" href="05-sin-emojis.html" target="_blank">
+            Abrir en pestaña nueva
+          </a>
+        </div>
+        <div class="marco">
+          <iframe
+            src="05-sin-emojis.html"
+            title="Sin emojis"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="num">06</div>
+        <h2>Desvanecimientos y transiciones</h2>
+        <p>
+          Degradados, luz que sigue al mouse, parallax, fotos de gris a color,
+          brillo en botones y aparición escalonada.
+        </p>
+        <div class="acciones">
+          <span class="archivo">06-desvanecimientos-y-transiciones.html</span>
+          <a
+            class="abrir"
+            href="06-desvanecimientos-y-transiciones.html"
+            target="_blank"
+          >
+            Abrir en pestaña nueva
+          </a>
+        </div>
+        <div class="marco">
+          <iframe
+            src="06-desvanecimientos-y-transiciones.html"
+            title="Desvanecimientos y transiciones"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="num">07</div>
+        <h2>Logos de Alfa Producciones</h2>
+        <p>
+          Logo horizontal en el menú y logo cuadrado de fondo en la sección de
+          contacto.
+        </p>
+        <div class="acciones">
+          <span class="archivo">07-logos-alfa.html</span>
+          <a class="abrir" href="07-logos-alfa.html" target="_blank">
+            Abrir en pestaña nueva
+          </a>
+        </div>
+        <div class="marco">
+          <iframe
+            src="07-logos-alfa.html"
+            title="Logos de Alfa Producciones"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="num">08</div>
+        <h2>Foto de audio nueva</h2>
+        <p>La imagen de audio pasa a ser la consola Behringer.</p>
+        <div class="acciones">
+          <span class="archivo">08-foto-audio-nueva.html</span>
+          <a class="abrir" href="08-foto-audio-nueva.html" target="_blank">
+            Abrir en pestaña nueva
+          </a>
+        </div>
+        <div class="marco">
+          <iframe
+            src="08-foto-audio-nueva.html"
+            title="Foto de audio nueva"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="num">09</div>
+        <h2>Marca completa</h2>
+        <p>
+          Contenido de tus PDFs: Nosotros, Equipo, Experiencia con fotos reales,
+          Marcas, contacto real, paleta oficial y Poppins.
+        </p>
+        <div class="acciones">
+          <span class="archivo">09-marca-alfa-completa.html</span>
+          <a class="abrir" href="09-marca-alfa-completa.html" target="_blank">
+            Abrir en pestaña nueva
+          </a>
+        </div>
+        <div class="marco">
+          <iframe
+            src="09-marca-alfa-completa.html"
+            title="Marca completa"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="num">10</div>
+        <h2>Cursor de micrófono</h2>
+        <p>
+          El mouse se convierte en un micrófono, y se vuelve blanco sobre lo que
+          se puede tocar.
+        </p>
+        <div class="acciones">
+          <span class="archivo">10-cursor-microfono.html</span>
+          <a class="abrir" href="10-cursor-microfono.html" target="_blank">
+            Abrir en pestaña nueva
+          </a>
+        </div>
+        <div class="marco">
+          <iframe
+            src="10-cursor-microfono.html"
+            title="Cursor de micrófono"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="num">11</div>
+        <h2>Ilustraciones por servicio (descartada)</h2>
+        <p>
+          Prueba con una escena animada por servicio. Se descartó: lo que
+          querías era que cambiara el cursor, no las imágenes.
+        </p>
+        <div class="acciones">
+          <span class="archivo">11-ilustraciones-por-servicio.html</span>
+          <a
+            class="abrir"
+            href="11-ilustraciones-por-servicio.html"
+            target="_blank"
+          >
+            Abrir en pestaña nueva
+          </a>
+        </div>
+        <div class="marco">
+          <iframe
+            src="11-ilustraciones-por-servicio.html"
+            title="Ilustraciones por servicio (descartada)"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="num">12</div>
+        <h2>Cursor distinto por sección</h2>
+        <p>
+          Todo vuelve a como estaba en la versión 10. En cada servicio el mouse
+          cambia: parlante en Audio, OBSBOT en Cámaras, pantalla LED con el logo
+          en Pantallas y foco motorizado en Luces.
+        </p>
+        <div class="acciones">
+          <span class="archivo">12-cursor-por-seccion.html</span>
+          <a class="abrir" href="12-cursor-por-seccion.html" target="_blank">
+            Abrir en pestaña nueva
+          </a>
+        </div>
+        <div class="marco">
+          <iframe
+            src="12-cursor-por-seccion.html"
+            title="Cursor distinto por sección"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </article>
+    </main>
+
+    <script>
+      // Ajusta cada vista previa (1280 x 800) al ancho disponible
+      function ajustar() {
+        document.querySelectorAll(".marco").forEach(function (marco) {
+          var escala = marco.clientWidth / 1280;
+          marco.querySelector("iframe").style.transform =
+            "scale(" + escala + ")";
+          marco.style.height = 800 * escala + "px";
+        });
+      }
+      window.addEventListener("resize", ajustar);
+      ajustar();
+    </script>
+  </body>
+</html>
